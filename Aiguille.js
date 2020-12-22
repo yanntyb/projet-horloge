@@ -10,6 +10,7 @@ let Aiguille = function (taille,couleur){
     this.div.style.left = "300px";
     this.div.style.top = 300 - this.taille + "px";
     this.div.style.border = "1px solid " + this.couleur;
+    this.div.className = "aiguille"
 }
 
 Aiguille.prototype.afficher = function (){
