@@ -2,7 +2,7 @@ import {Horloge} from "./Horloge.js";
 import {Aiguille} from "./Aiguille.js";
 
 let horloge = new Horloge();
-let aiguille = [[new Aiguille(150,"red"),1000],[new Aiguille(200,"yellow"),60000],[new Aiguille(250,"purple"),3600000]];
+let aiguille = [[new Aiguille(250,"red"),1000],[new Aiguille(200,"yellow"),60000],[new Aiguille(150,"purple"),3600000]];
 
 horloge.afficherCercle();
 
