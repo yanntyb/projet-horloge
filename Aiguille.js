@@ -1,17 +1,26 @@
-let Aiguille = function (taille){
-    this.taille = taille + "px";
+let Aiguille = function (taille,couleur){
+    this.taille = taille;
+    this.couleur = couleur;
+    this.deg = 0;
+
     this.div = document.createElement("div");
-    this.div.style.height = this.taille;
+    this.div.style.height = this.taille + "px";
     this.div.style.width = "0";
     this.div.style.position = "absolute";
     this.div.style.left = "300px";
-    this.div.style.top = "100px";
-    this.div.style.border = "1px solid black"
+    this.div.style.top = 300 - this.taille + "px";
+    this.div.style.border = "1px solid " + this.couleur;
 }
 
 Aiguille.prototype.afficher = function (){
     let horloge = document.getElementById("horloge");
-    horloge.appendChild(this.div);
+    horloge.append(this.div);
+}
+
+Aiguille.prototype.moveDiv = function (){
+    this.div.style.transformOrigin = "bottom";
+    this.div.style.transform = "rotate(" + this.deg + "deg)";
+    this.deg += 6;
 }
 
 export {Aiguille};
