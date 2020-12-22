@@ -9,7 +9,7 @@ let Horloge = function () {
 Horloge.prototype.printNumber = function (max, taille) {
     for (let i = 0; i < max; i++) {
         let div = document.createElement("div");
-        div.style.position = "absolute"
+        div.style.position = "absolute";
         div.style.height = taille + "px";
         div.style.left = "295px";
         div.style.top = 300 - taille + "px";
@@ -69,5 +69,20 @@ Horloge.prototype.setTime = function (aiguille) {
     this.div.append(div);
 }
 
+Horloge.prototype.setDate = function (taille){
+    let tabDay = ["lundi","mardi","mercredi","jeudi","vendredi","samedi"];
+    for(let i in tabDay){
+        let divDate = document.createElement("div");
+        divDate.className = "date"
+        divDate.innerHTML = tabDay[i];
+        divDate.style.transformOrigin = "bottom";
+        divDate.style.transform = "rotate(" + i * (360 / 6) + "deg)";
+        divDate.style.height = taille + "px";
+        divDate.style.position = "absolute"
+        divDate.style.left = "285px";
+        divDate.style.top = 300 - taille + "px";
+        this.div.append(divDate);
+    }
+}
 
 export {Horloge};
