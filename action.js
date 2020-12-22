@@ -8,7 +8,7 @@ let aiguille = [
     [new Aiguille(150,"purple",horloge),3600000]
 ];
 
-horloge.afficherCercle();
+horloge.afficher();
 
 function move(obj,time){
     obj.afficher()
