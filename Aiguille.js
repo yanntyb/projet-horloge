@@ -10,7 +10,7 @@ let Aiguille = function (taille,couleur,parent){
     this.div.style.left = "300px";
     this.div.style.top = 300 - this.taille + "px";
     this.div.style.border = "1px solid " + this.couleur;
-    this.div.className = "aiguille"
+    this.div.className = "aiguille";
 }
 
 Aiguille.prototype.afficher = function (){
@@ -18,9 +18,10 @@ Aiguille.prototype.afficher = function (){
 }
 
 Aiguille.prototype.moveDiv = function (){
+    // FIXME
+    this.deg = (this.deg < 360) ? this.deg + 6: 6;
     this.div.style.transformOrigin = "bottom";
     this.div.style.transform = "rotate(" + this.deg + "deg)";
-    this.deg += 6;
 }
 
 export {Aiguille};
