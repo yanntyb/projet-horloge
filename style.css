@@ -1,0 +1,13 @@
+#horloge {
+    position: absolute;
+    top: 100px;
+    left: 100px;
+    width: 600px;
+    height: 600px;
+    border: 1px solid #000000;
+    border-radius: 50%;
+    background-color: cadetblue;
+    color: darkkhaki;
+    text-shadow: 1px 3px 2px rgba(14, 54, 128, 1);
+    box-shadow: 1px 1px 8px 6px rgba(0,0,0,0.5);
+}
