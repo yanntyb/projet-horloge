@@ -10,6 +10,7 @@ Horloge.prototype.printNumber = function(max){
     for(let i =0; i < max; i++){
         console.log(i)
         let div = document.createElement("div");
+        div.style.position = "absolute"
         div.style.height = "300px";
         div.innerHTML = i;
         div.style.transformOrigin = "bottom";
