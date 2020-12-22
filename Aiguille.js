@@ -1,5 +1,4 @@
 let date = new Date();
-console.log(date.getMinutes())
 
 let Aiguille = function (taille,couleur,parent){
     this.taille = taille;
