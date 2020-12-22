@@ -1,8 +1,8 @@
-let Aiguille = function (taille,couleur){
+let Aiguille = function (taille,couleur,parent){
     this.taille = taille;
     this.couleur = couleur;
     this.deg = 0;
-
+    this.parent = parent.div;
     this.div = document.createElement("div");
     this.div.style.height = this.taille + "px";
     this.div.style.width = "0";
@@ -14,8 +14,7 @@ let Aiguille = function (taille,couleur){
 }
 
 Aiguille.prototype.afficher = function (){
-    let horloge = document.getElementById("horloge");
-    horloge.append(this.div);
+    this.parent.prepend(this.div);
 }
 
 Aiguille.prototype.moveDiv = function (){
