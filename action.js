@@ -9,6 +9,7 @@ let aiguille = [
 ];
 
 horloge.afficher();
+horloge.setTime(aiguille);
 
 function move(obj,time){
     obj.afficher()
