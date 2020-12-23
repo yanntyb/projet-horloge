@@ -8,7 +8,6 @@ let Aiguille = function (taille,couleur,parent){
     }else if(this.taille === 200){
         this.deg = date.getMinutes() * 6;
     }else if(this.taille === 150){
-        console.log(date.getHours())
         this.deg = date.getHours() * 6;
     }else if(this.taille === 100){
         this.deg = (date.getHours()/24) * 60;
