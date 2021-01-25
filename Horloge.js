@@ -1,3 +1,5 @@
+
+//Definition du cercle central
 let Horloge = function () {
     this.div = document.createElement("div");
     this.div.id = "horloge";
@@ -6,6 +8,8 @@ let Horloge = function () {
     this.div.append(this.cercleCentre);
 }
 
+
+//definition des nombres autour de l'horloge
 Horloge.prototype.printNumber = function (max, taille) {
     for (let i = 0; i < max; i++) {
         let div = document.createElement("div");
@@ -21,12 +25,17 @@ Horloge.prototype.printNumber = function (max, taille) {
     }
 }
 
+
+//J'affiche les minutes et les heures
 Horloge.prototype.afficher = function () {
+    //heures donc 12 nombres
     this.printNumber(12, 300);
+    //minutes donc 60 nombres
     this.printNumber(60, 270);
     document.body.append(this.div);
 }
 
+//Fonction qui permet de modifier l'heure avec les boutons sur la droite
 Horloge.prototype.setTime = function (aiguille) {
     let div = document.createElement("div");
     div.className = "setTime";
@@ -40,6 +49,11 @@ Horloge.prototype.setTime = function (aiguille) {
             let divButton = document.createElement("div");
             divButton.className = title[i] + " " + nameButton[j];
             divButton.innerHTML = nameButton[j];
+
+
+            //Quand je click sur un des boutons ça ajuste l'heure, les minutes ou les secondes en fonction de la class du bouton
+            //sur lequel j'ai cliqué
+            //mes aiguilles sont stocké dans un tableau donc je bouge seulement celle qui correspondes
             divButton.addEventListener("click", function () {
                 if (this.className.includes("add")) {
                     if (this.className.includes("hours")) {
@@ -69,20 +83,5 @@ Horloge.prototype.setTime = function (aiguille) {
     this.div.append(div);
 }
 
-Horloge.prototype.setDate = function (taille){
-    let tabDay = ["lundi","mardi","mercredi","jeudi","vendredi","samedi"];
-    for(let i in tabDay){
-        let divDate = document.createElement("div");
-        divDate.className = "date"
-        divDate.innerHTML = tabDay[i];
-        divDate.style.transformOrigin = "bottom";
-        divDate.style.transform = "rotate(" + i * (360 / 6) + "deg)";
-        divDate.style.height = taille + "px";
-        divDate.style.position = "absolute"
-        divDate.style.left = "285px";
-        divDate.style.top = 300 - taille + "px";
-        this.div.append(divDate);
-    }
-}
 
 export {Horloge};

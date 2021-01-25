@@ -1,5 +1,8 @@
 let date = new Date();
 
+
+//Difinition des aiguille en fonction de leurs taille;
+//multiplication par 6 car 360degrés divisés en 60 portions = 6degrés
 let Aiguille = function (taille,couleur,parent){
     this.taille = taille;
     this.couleur = couleur;
@@ -9,8 +12,6 @@ let Aiguille = function (taille,couleur,parent){
         this.deg = date.getMinutes() * 6;
     }else if(this.taille === 150){
         this.deg = date.getHours() * 6;
-    }else if(this.taille === 100){
-        this.deg = (date.getHours()/24) * 60;
     }
     this.parent = parent.div;
     this.div = document.createElement("div");
@@ -29,8 +30,9 @@ Aiguille.prototype.afficher = function (){
     this.parent.prepend(this.div);
 }
 
+//on ajoute 6 degré chaque seconde
+//Quand la rotation atteint 366 je la remet a 6 pour la reinitialiser
 Aiguille.prototype.moveDiv = function (){
-    // FIXME
     this.deg = (this.deg < 360) ? this.deg + 6: 6;
     this.div.style.transformOrigin = "bottom";
     this.div.style.transform = "rotate(" + this.deg + "deg)";
